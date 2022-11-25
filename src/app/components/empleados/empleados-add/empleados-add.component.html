@@ -1,0 +1,50 @@
+<div class="container my-5">
+
+  <h1 class="mb-3">Agregar Nuevo Empleado</h1>
+
+  <form class="row g-3" #form="ngForm" (ngSubmit)="addEmpleado()">
+    <div class="col-md-6">
+      <label for="nombres" class="form-label">Nombres</label>
+      <input type="text" class="form-control" id="nombres" name="nombres" [(ngModel)]="addEmpleadoRequest.nombres">
+    </div>
+    <div class="col-md-6">
+      <label for="fechaIngreso" class="form-label">Fecha de Ingreso</label>
+      <input type="date" class="form-control" id="fechaIngreso" name="fechaIngreso" [(ngModel)]="addEmpleadoRequest.fechaIngreso">
+    </div>
+    <div class="col-md-6">
+      <label for="apellidoPaterno" class="form-label">Apellido Paterno</label>
+      <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno" [(ngModel)]="addEmpleadoRequest.apellidoPaterno">
+    </div>
+    <div class="col-md-6">
+      <label for="apellidoMaterno" class="form-label">Apellido Materno</label>
+      <input type="text" class="form-control" id="apellidoMaterno" name="apellidoMaterno" [(ngModel)]="addEmpleadoRequest.apellidoMaterno">
+    </div>
+    <div class="col-12">
+      <label for="direccion" class="form-label">Dirección</label>
+      <input type="text" class="form-control" id="direccion" name="direccion" placeholder="1234 Main St" [(ngModel)]="addEmpleadoRequest.direccion">
+    </div>
+    <div class="col-md-6">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input type="number" class="form-control" id="telefono" name="telefono" placeholder="999999999" [(ngModel)]="addEmpleadoRequest.telefono">
+    </div>
+    <div class="col-md-6">
+      <label for="email" class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="addEmpleadoRequest.email">
+    </div>
+    <div class="col-md-6">
+      <label for="departamentoID" class="form-label">Área de Trabajo</label>
+      <select id="departamentoID" class="form-select" name="departamentoID" [(ngModel)]="addEmpleadoRequest.departamentoID">
+        <option selected>Seleccionar...</option>
+        <option value="1">Tecnologías de la Información</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="archivoFoto" class="form-label">Identificación del Trabajador</label>
+      <input class="form-control" type="file" id="archivoFoto" name="archivoFoto" [(ngModel)]="addEmpleadoRequest.archivoFoto">
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">REGISTRAR</button>
+    </div>
+  </form>
+
+</div>

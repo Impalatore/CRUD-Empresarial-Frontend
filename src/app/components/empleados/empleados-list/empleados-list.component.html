@@ -1,0 +1,32 @@
+<div class="container my-5">
+  <h1 class="mb-3">Empleados</h1>
+  <table class="table" *ngIf="empleados && empleados.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NOMBRES</th>
+        <th>PATERNO</th>
+        <th>MATERNO</th>
+        <th>TELÉFONO</th>
+        <th>EMAIL</th>
+        <th>DIRECCIÓN</th>
+        <th>INGRESO</th>
+        <th>FOTO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empleado of empleados">
+        <td>{{ empleado.id }}</td>
+        <td>{{ empleado.nombres }}</td>
+        <td>{{ empleado.apellidoPaterno }}</td>
+        <td>{{ empleado.apellidoMaterno }}</td>
+        <td>{{ empleado.telefono }}</td>
+        <td>{{ empleado.email }}</td>
+        <td>{{ empleado.direccion }}</td>
+        <td>{{ empleado.fechaIngreso }}</td>
+        <td>{{ empleado.archivoFoto }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="!empleados || empleados.length <= 0">No hay empleados que mostrar.</p>
+</div>
