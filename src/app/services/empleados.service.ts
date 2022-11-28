@@ -15,4 +15,20 @@ export class EmpleadosService {
   getAllEmpleados(): Observable<Empleado[]> {
     return this.http.get<Empleado[]>(this.baseApiUrl + '/api/empleado');
   }
+
+  getEmpleado(id: number): Observable<Empleado> {
+    return this.http.get<Empleado>(this.baseApiUrl + '/api/empleado/' + id);
+  }
+
+  addEmpleado(addEmpleadoRequest: Empleado) {
+    return this.http.post<Empleado>(this.baseApiUrl + '/api/empleado', addEmpleadoRequest);
+  }
+
+  updateEmpleado(id: number, updateEmpleadoRequest: Empleado): Observable<Empleado> {
+    return this.http.put<Empleado>(this.baseApiUrl + '/api/empleado/' + id, updateEmpleadoRequest)
+  }
+
+  deleteEmpleado(id: number): Observable<Empleado> {
+    return this.http.delete<Empleado>(this.baseApiUrl + '/api/empleado/' + id);
+  }
 }

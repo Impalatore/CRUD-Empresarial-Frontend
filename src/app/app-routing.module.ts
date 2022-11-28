@@ -4,13 +4,9 @@ import {AppComponent} from "./app.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {EmpleadosListComponent} from "./components/empleados/empleados-list/empleados-list.component"
 import {EmpleadosAddComponent} from "./components/empleados/empleados-add/empleados-add.component";
+import {EmpleadosEditComponent} from "./components/empleados/empleados-edit/empleados-edit.component";
 
-// src/app/app.module.ts
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: EmpleadosListComponent
-  // },
   {
     path: 'empleados',
     component: EmpleadosListComponent
@@ -19,13 +15,12 @@ const routes: Routes = [
     path: 'empleados/add',
     component: EmpleadosAddComponent
   },
-  // {
-  //   path: 'departamentos',
-  //   component: DepartamentosListComponent
-  // }
+  {
+    path: 'empleados/edit/:id',
+    component: EmpleadosEditComponent
+  },
 ]
 
-// src/app/app.module.ts
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]

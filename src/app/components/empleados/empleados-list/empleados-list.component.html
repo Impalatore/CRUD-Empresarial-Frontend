@@ -11,6 +11,7 @@
         <th>EMAIL</th>
         <th>DIRECCIÓN</th>
         <th>INGRESO</th>
+        <th>ÁREA DE TRABAJO</th>
         <th>FOTO</th>
       </tr>
     </thead>
@@ -24,7 +25,9 @@
         <td>{{ empleado.email }}</td>
         <td>{{ empleado.direccion }}</td>
         <td>{{ empleado.fechaIngreso }}</td>
+        <td>{{ empleado.departamentoID }}</td>
         <td>{{ empleado.archivoFoto }}</td>
+        <td><a [routerLink]="['/empleados', 'edit', empleado.id]">Editar</a></td>
       </tr>
     </tbody>
   </table>

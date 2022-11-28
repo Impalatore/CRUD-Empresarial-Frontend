@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Empleado} from "../../../models/empleado.model";
+import {EmpleadosService} from "../../../services/empleados.service";
 
 @Component({
   selector: 'app-empleados-add',
@@ -20,13 +21,18 @@ export class EmpleadosAddComponent implements OnInit {
     fechaIngreso: '',
     archivoFoto: 0,
   }
-  constructor() { }
+  constructor(private empleadoService: EmpleadosService) { }
 
   ngOnInit(): void {
   }
 
   addEmpleado(){
-    console.log(this.addEmpleadoRequest);
+    this.empleadoService.addEmpleado(this.addEmpleadoRequest)
+      .subscribe({
+        next: (empleado) => {
+          console.log(empleado)
+        }
+      })
   }
 
 }
